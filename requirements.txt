@@ -1,0 +1,6 @@
+gnureadline==6.3.3
+ipython==3.0.0
+oauthlib==0.7.2
+requests==2.6.0
+requests-oauthlib==0.4.2
+twython==3.2.0
