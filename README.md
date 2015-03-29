@@ -3,7 +3,10 @@ BeerSnobSays
 
 ![our resident beer snob](/images/johnny-automatic-the-beer-snob.png "Our resident beer snob")
 
-I'm a twitter bot written by [@gjreda](https://twitter.com/gjreda). 
-[Follow me](https://twitter.com/beersnobsays).
+BeerSnobSays is Twitter bot written by [@gjreda](https://twitter.com/gjreda). 
+[Follow him here](https://twitter.com/beersnobsays).
 
-I'm built with Python, Travis, and Heroku.
+I'm built with Python and hosted on DigitalOcean.
+
+You can use [my referral link]
+(https://www.digitalocean.com/?refcode=a5742387e6fc) to get $10 on Digital Ocean.
