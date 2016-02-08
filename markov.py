@@ -1,9 +1,11 @@
+#!/usr/local/bin/python
 from collections import defaultdict
 from itertools import chain
 from twython import Twython
 import random
 import re
 import sys
+import time
 
 import config
 
@@ -52,7 +54,11 @@ class MarkovChain(object):
 
         # loop until it's a sentence
         while tweet[-2] not in '.!?':
-            tweet += (w1 + ' ')
+            if len(w1) > 6 and (random.randint(0,10) > 7):
+                tweet += ("#" + w1 + " ")
+            else:
+                tweet += (w1 + ' ')
+
             w1, w2 = w2, random.choice(self.word_cache[(w1, w2)])
 
         # if it's too short or too long, try again
@@ -63,7 +69,11 @@ class MarkovChain(object):
 def main():
     with open(sys.argv[1]) as f:
         text = [line for line in f]
-    tweet = MarkovChain(text).generate_tweet()
+    tweet = MarkovChain(text).generate_tweet().capitalize()
+    # wait a random amount of time. A few minutes
+    delay = random.randint(0,1200)
+    time.sleep(delay)
+    # print tweet
     twitter.update_status(status=tweet)
 
 if __name__ == '__main__':
